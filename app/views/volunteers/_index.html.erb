@@ -1,0 +1,32 @@
+<table class="table table-hover table-inverse">
+ 	<thead>
+   		<tr> 
+   			<th></th>
+    	  	<th>タイトル</th>
+    	  	<th>開催日時</th>
+    	  	<th>主催者名</th>
+    	  	<th>     </th>
+    	</tr>
+  	</thead>
+	<% volunteers.each do |volunteer| %>
+			<tbody>
+			    <tr>
+			    	<td>
+			    		<%= image_tag "#{volunteer.image_id}", size:"120x80" %>
+			    	</td>
+			    	<td>
+			    		<%= volunteer.title %>
+			    	</td>
+			    	<td>
+			    		<%= volunteer.date %><%= volunteer.open_time %>
+			    	</td>
+			    	<td>
+			    		<%= volunteer.group_name %>
+			    	</td>
+			    	<td>
+			    		<%= link_to "詳細へ", volunteer_path(volunteer.id) %>
+			    	</td>
+			    </tr>
+			</tbody>
+	<% end %>
+</table>

@@ -1,0 +1,27 @@
+<h1 class="event_show">イベント詳細</h1>
+<div class="image_show">
+	<%= image_tag "#{@volunteer.image_id}", size:"300x200" %>
+</div>
+<div class="row">
+    <p class="object">タイトル</p>
+	<%= @volunteer.title %>
+</div>
+<div class="row">
+    <p class="object">説明</p>
+	<%= @volunteer.description %>
+</div>
+<div class="row">
+    <p class="object">開催場所</p>
+    <%= @volunteer.venue %>
+</div>
+<div class="row">
+    <p class="object">開催日時</p>
+	<%= @volunteer.date %><%= @volunteer.open_time %>
+</div>
+<div class="row">
+    <p class="object">主催者名</p>
+    <%= @volunteer.group_name %>
+</div>
+<div class="row">
+    <%= link_to "イベントURL(詳細はこちら)", @volunteer.event_url %>
+</div>

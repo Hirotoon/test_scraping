@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+      <span>ボランティア求人サイト</span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+          <li><%= link_to '登録団体一覧画面', groups_path, class: 'glyphicon' %></li>
+          <li><%= link_to '団体登録画面', new_group_path, class: 'glyphicon' %></li>
+          <li><%= link_to 'ボランティア求人一覧画面', volunteers_path , class: 'glyphicon'%></li>
+          <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'glyphicon' %></li>
+        <% else %>
+          <li><%= link_to '登録団体一覧画面', groups_path, class: 'glyphicon' %></li>
+          <li><%= link_to 'ボランティア求人一覧画面', volunteers_path, class: 'glyphicon' %></li>
+          <li><%= link_to 'ログイン', new_admin_session_path , class: 'glyphicon'%></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

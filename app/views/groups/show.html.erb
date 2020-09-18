@@ -1,0 +1,38 @@
+<h1 class="event_show">登録団体詳細</h1>
+<div class="image_show">
+	<%= attachment_image_tag @group, :image, format: 'jpeg', class: "attachment user profile_image fallback", fallback: "no_image.jpg", size: "300x200"  %>
+</div>
+<div class="row">
+    <p class="object">団体者名</p>
+	<%= @group.name %>
+</div>
+<div class="row">
+    <p class="object">住所</p>
+	<%= @group.address %>
+</div>
+<div class="row">
+    <p class="object">電話番号</p>
+    <%= @group.phone_number%>
+</div>
+<div class="row">
+    <p class="object">メールアドレス</p>
+	<%= @group.mail %>
+</div>
+<div class="row">
+    <p class="object">活動エリア</p>
+    <%= @group.active_area %>
+</div>
+<div class="row">
+    <p class="object">団体概要</p>
+    <%= @group.description %>
+</div>
+<% if admin_signed_in? %>
+    <div class="delete">
+        <%= link_to "編集画面へ", edit_group_path(@group.id), class: "green-button"%>
+        <%= link_to "削除する", group_path(@group.id), method: :delete, data: {confirm: "この団体を本当に削除してよろしいでしょうか。"}, class: "delete-button"%>
+    </div>
+<% end %>
+<div>
+    <%= link_to "一覧画面へ戻る", groups_path %>
+</div>
+
